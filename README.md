@@ -1,10 +1,9 @@
-# meh #
-*An __m__inimalist, __e__mbeddable, self-hosted and self-aware\* __H__TTP server for C#*
+# MEH #
+*An __m__inimalist, __e__mbeddable, self-__h__osted and self-aware&#42; HTTP server for C#*
 
 ### Usage ###
-Simply include the `MEH.cs` file into your project, add a `use MEH;` line and that's it!
 
-Writing a MEH server is just as easy: simply extend the `MEH.HttpServer` class.
+Writing a MEH server is incredibly easy:
 
 		using MEH;
 
@@ -14,7 +13,7 @@ Writing a MEH server is just as easy: simply extend the `MEH.HttpServer` class.
 			}
 		}
 
-New HTTP handlers are added through `GET` and `POST` methods:
+New request handlers (ie. routes in "richer" libraries) are added through `GET` and `POST` methods:
 
 		public Stage(int port) : base(port) {
 			POST(@"/feeling/(\w)$", (m, p) => {
@@ -40,8 +39,10 @@ The `m` argument is a [`System.Text.RegularExpressions.GroupCollection`](http://
 
 You're now 200 to start using the "library".
 
+Oh yes, MEH can serve static files as well. Take a look at the `ServeFiles` method, I don't feel like writing about it right now. meh.
+
 ### License ###
-meh is based on the works of [David Jeske](http://www.codeproject.com/Articles/137979/Simple-HTTP-Server-in-C), and as the original work, meh is published to public domain. Have fun!
+MEH is based on the works of [David Jeske](http://www.codeproject.com/Articles/137979/Simple-HTTP-Server-in-C), and as the original work, meh is published to public domain. Have fun!
 
 ### Footnotes ###
 \* &ndash; self-aware of its limitations
